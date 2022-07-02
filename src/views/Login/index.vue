@@ -1,7 +1,14 @@
 <template>
   <div class="login-container">
     <!-- 导航栏 -->
-    <van-nav-bar class="page-nav-bar" title="登录" />
+    <van-nav-bar class="page-nav-bar" title="登录">
+      <van-icon
+        slot="left"
+        name="cross"
+        @click="$router.back()"
+        class="cross"
+      ></van-icon>
+    </van-nav-bar>
     <!-- 登录表单 -->
     <van-form @submit="onSubmit" ref="loginForm">
       <van-field
@@ -83,7 +90,8 @@ export default {
       })
       try {
         const { data } = await login(this.user)
-        // console.log("登录成功", res);
+        console.log('登录成功')
+        this.$router.push('/layout/my')
         this.$store.commit('setUser', data.data)
         this.$toast.success('登录成功')
       } catch (err) {
@@ -102,7 +110,7 @@ export default {
         await this.$refs.loginForm.validate('mobile')
         // console.log("验证通过");
       } catch (err) {
-        // return console.log("验证失败", err);
+        return console.log('验证失败', err)
       }
       this.isCountDownShow = true
 
@@ -112,7 +120,7 @@ export default {
         await sendSms(this.user.mobile)
         this.$toast('发送成功')
       } catch (err) {
-        console.log(err)
+        console.log(err, 11111)
         this.isCountDownShow = false
         if (err.response.status === 429) {
           this.$toast('发送太频繁,请稍后重试')
