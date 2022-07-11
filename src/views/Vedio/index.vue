@@ -1,5 +1,7 @@
 <template>
-  <div>视频</div>
+  <div>
+    <div class="father"></div>
+  </div>
 </template>
 
 <script>
@@ -9,5 +11,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+.father {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  margin: 0 auto;
+  &:before {
+    position: fixed;
+    left: 0;
+    width: 10px;
+    height: 400px;
+    background-image: url(../../assets/gradient-gray-line.png);
+    background-size: contain;
+    position: absolute;
+    content: '';
+    // background-repeat: no-repeat;
+  }
+}
 </style>

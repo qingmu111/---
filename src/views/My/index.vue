@@ -217,6 +217,9 @@ export default {
       color: #d86262;
       font-size: 30px;
       height: 104px;
+      .van-cell__title {
+        line-height: 64px;
+      }
     }
   }
 }

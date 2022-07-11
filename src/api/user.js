@@ -30,3 +30,19 @@ export const getUserInfo = () => {
 
   })
 }
+
+// 获取所有频道列表
+export const getUserChannels = () => {
+  return request({
+    url: '/v1_0/user/channels',
+    method: 'GET'
+    /* headers: {
+      // 该接口需要授权
+      // token数据格式 Bearer后面有一个空格
+      Authorization: `Bearer ${store.state.user.token}`
+    } */
+
+  })
+}
+
+// 获取用户的频道
