@@ -31,7 +31,7 @@ export const getUserInfo = () => {
   })
 }
 
-// 获取所有频道列表
+// 获取频道列表
 export const getUserChannels = () => {
   return request({
     url: '/v1_0/user/channels',
@@ -44,5 +44,3 @@ export const getUserChannels = () => {
 
   })
 }
-
-// 获取用户的频道

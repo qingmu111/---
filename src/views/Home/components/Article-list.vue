@@ -79,7 +79,7 @@ export default {
     async onRefresh () {
       // console.log('onRefresh')
       try {
-        const { data } = await getArticles({ channel_id: this.channel.id, timestamp: Date.now() || null })
+        const { data } = await getArticles({ channel_id: this.channel.id, timestamp: Date.now() })
         // 模拟失败情形
         /*  if (Math.random() > 0.1) {
           JSON.parse('ddddddddddd')
@@ -99,7 +99,7 @@ export default {
     async onLoad () {
       try {
         // 1.请求获取数据
-        const { data } = await getArticles({ channel_id: this.channel.id, timestamp: Date.now() || null })
+        const { data } = await getArticles({ channel_id: this.channel.id, timestamp: this.timestamp || Date.now() })
         // console.log(data, '11111')
         // 2.把请求数据结果数据放到list数组中
         const { results } = data.data

@@ -2,7 +2,7 @@
   <div>
     <van-cell class="article-item">
       <div slot="title" class="title van-multi-ellipsis--l2">
-        {{ article.title }}111111111111111111111111111
+        {{ article.title }}11111111111111111
       </div>
       <div slot="label">
         <div class="cover-wrap" v-if="article.cover.type === 3">
