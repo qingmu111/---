@@ -42,6 +42,13 @@ const routes = [
     path: '/search',
     name: 'SearchIndex',
     component: () => import('@/views/Search')
+  },
+  {
+    path: '/article/:articleId',
+    name: 'ArticleIndex',
+    component: () => import('@/views/Article'),
+    props: true
+
   }
 ]
 

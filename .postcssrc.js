@@ -10,7 +10,9 @@ module.exports = {
       rootValue ({ file }) {
         return file.indexOf('vant') !== -1 ? 37.5 : 75
       },
-      propList: ['*']
+      propList: ['*'],
+      // 排除不要转换的样式资源
+      exclude: 'github-markdown'
     }
   }
 }

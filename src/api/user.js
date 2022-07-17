@@ -44,3 +44,24 @@ export const getUserChannels = () => {
 
   })
 }
+
+// 关注用户  /v1_0/user/followings POST
+export const addUser = (target) => {
+  return request({
+    url: '/v1_0/user/followings',
+    method: 'POST',
+    data: {
+      target
+    }
+
+  })
+}
+
+// 取消关注 /v1_0/user/followings/:target
+export const deleteUser = (target) => {
+  return request({
+    url: `/v1_0/user/followings/${target}`,
+    method: 'DELETE'
+
+  })
+}
