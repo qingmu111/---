@@ -65,3 +65,42 @@ export const deleteUser = (target) => {
 
   })
 }
+
+// 获取用户个人资料  /v1_0/user/profile
+export const getUserProfile = () => {
+  return request({
+    url: '/v1_0/user/profile',
+    method: 'GET'
+
+  })
+}
+
+// 编辑用户个人资料 /v1_0/user/profile
+export const editUserProfile = (data) => {
+  return request({
+    url: '/v1_0/user/profile',
+    method: 'PATCH',
+    data
+
+  })
+}
+
+// 编辑用户照片资料（头像、身份证照片） /v1_0/user/photo PATCH
+export const editUserPhoto = (data) => {
+  return request({
+    url: '/v1_0/user/photo',
+    method: 'PATCH',
+    data
+
+  })
+}
+
+// 编辑用户照片资料（头像、身份证照片）  /v1_0/user/photo  PATCH
+export const editPhoto = (data) => {
+  return request({
+    url: '/v1_0/user/photo',
+    method: 'PATCH',
+    data
+
+  })
+}
